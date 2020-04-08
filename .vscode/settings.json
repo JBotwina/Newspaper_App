@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "C:\\Users\\jimbo\\.virtualenvs\\news-won6XzQz\\Scripts\\python.exe",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": ["--errors-only","--load-plugins", "pylint_django"],
+    "terminal.integrated.shellArgs.windows": ["-ExecutionPolicy", "Bypass"]
+}
