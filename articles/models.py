@@ -10,6 +10,8 @@ class Article(models.Model):
     author = models.ForeignKey(
         get_user_model(),
         on_delete = models.CASCADE,
+        null=True,
+        blank=True,
     )
 
     def __str__(self):
@@ -28,15 +30,22 @@ class Comment(models.Model):
         blank=True,
         )
     comment = models.CharField(max_length =140)
+    '''
     author = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE, 
-        null =True,
+        null=True,
+        blank=True,
     )
+    '''
 
     def __str__(self):
         return self.comment
-    
+    '''
+    def approve(self):
+        self.approved_comment = True
+        self.save()
+    '''
     def get_absolute_url(self):
         return reverse('article_list')
 
