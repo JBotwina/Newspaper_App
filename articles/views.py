@@ -7,7 +7,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 
-from .models import Article
+from .models import Article, Comment
 
 
 class ArticleListView(LoginRequiredMixin,ListView):
@@ -49,3 +49,12 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self,form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+class ArticleCommentView(CreateView):
+    model = Comment
+    fields = ('comment', )
+    template_name = "article_comment.html"
+    success_url = reverse_lazy('article_list')
+    login_url = 'login'
+
+    

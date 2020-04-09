@@ -17,6 +17,7 @@
                 {{ article.body }}
                 <a href="{% url 'article_edit' article.pk %}">Edit</a>
                 |<a href= " {% url 'article_delete' article.pk %} ">Delete</a>
+                | <a href=" {% url 'article_comment' article.pk%} ">Comment</a>
             </div>
             <div class="card-footer"> 
                 {% for comment in article.comments.all %}
