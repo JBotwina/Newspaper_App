@@ -24,11 +24,10 @@ class Comment(models.Model):
         on_delete= models.CASCADE,
         related_name='comments',
         )
-    comment = models.CharField(max_length =140)
-    author = models.ForeignKey(
-        get_user_model(),
-        on_delete=models.CASCADE
-    )
+    author = models.CharField(max_length=200)
+    comment = models.CharField(max_length =200)
+    approved_comment = models.BooleanField(default=False)
+    
 
     def __str__(self):
         return self.comment
