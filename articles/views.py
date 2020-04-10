@@ -56,5 +56,6 @@ class ArticleCommentView(CreateView):
     template_name = "article_comment.html"
     success_url = reverse_lazy('article_list')
     login_url = 'login'
+    
 
     

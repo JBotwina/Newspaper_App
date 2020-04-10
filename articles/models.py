@@ -30,15 +30,16 @@ class Comment(models.Model):
         blank=True,
         )
     comment = models.CharField(max_length =140)
-    '''
+
+    approved_comment = False
+
     author = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE, 
         null=True,
         blank=True,
-    )
-    '''
 
+    )
     def __str__(self):
         return self.comment
     '''
@@ -47,5 +48,6 @@ class Comment(models.Model):
         self.save()
     '''
     def get_absolute_url(self):
+        self.save()
         return reverse('article_list')
 
