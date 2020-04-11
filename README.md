@@ -1,6 +1,6 @@
 # Newspaper_App
 
-This web application is written in Django and Bootstrap. It allows logged in users to post articles and edit the articles that they posted.
+This web application is written in Django and Bootstrap. It allows logged in users to post articles, edit the articles that they posted, comment on other aritcles on the page and do email reset via email. 
 
 ## Skills that I learned:
 
